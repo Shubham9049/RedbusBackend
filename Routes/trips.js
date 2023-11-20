@@ -4,17 +4,17 @@ const routes=require("express").Router()
 let db
 
 
-// routes.get("/books", async (req,res)=>{
-//     db=getDb()
-//       try {
-//         const collection=db.collection("books")
-//         const data=await collection.find({}).toArray();
-//         res.json(data)
-//       } catch (error) {
-//         console.log(error);
-//         res.status(500).send('Internal Server Error');
-//       }
-//     })
+routes.get("/alltrip", async (req,res)=>{
+    db=getDb()
+      try {
+        const collection=db.collection("books")
+        const data=await collection.find({}).toArray();
+        res.json(data)
+      } catch (error) {
+        console.log(error);
+        res.status(500).send('Internal Server Error');
+      }
+    })
     // Get list of buses running between specified route
     routes.get('/books', async (req, res) => {
       const { from, to,date } = req.query;
