@@ -1,6 +1,7 @@
 const {connectDB,getDb}=require("./config/db")
 const express=require("express")
-const {routes}=require("./routes")
+const {routes}=require("./Routes/trips")
+const {city}=require("./Routes/City")
 
 const cors=require("cors")
 
@@ -11,6 +12,7 @@ const app=express()
 app.use(cors());
 app.use(express.json());
 app.use("/red",routes)
+app.use("/red",city)
 
 
 
