@@ -2,6 +2,7 @@ const {connectDB,getDb}=require("./config/db")
 const express=require("express")
 const {routes}=require("./Routes/trips")
 const {city}=require("./Routes/City")
+const {client}=require("./Routes/coustomer.details")
 
 const cors=require("cors")
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/red",routes)
 app.use("/red",city)
+app.use("/red",client)
 
 
 

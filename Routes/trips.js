@@ -3,6 +3,7 @@ const routes=require("express").Router()
 
 let db
 
+// get all the trip
 
 routes.get("/alltrip", async (req,res)=>{
     db=getDb()
